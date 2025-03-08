@@ -15,7 +15,7 @@ import wolframalpha
 import pyautogui
 import ctypes
 
-netflix_df = pd.read_csv("C:/Users/Aryan/Downloads/netflix_dataset/netflix_titles.csv",encoding='latin1')
+netflix_df = pd.read_csv("Location dataset",encoding='latin1')
 
 
 reminders = {}
@@ -65,7 +65,7 @@ def takeCommand():
     return query
 
 def get_news(category, country):
-    newsapi = NewsApiClient(api_key='65d616f9aac6470791682b979ff81043')
+    newsapi = NewsApiClient(api_key='YOUR API_KEY HERE')
     countries = {country.name: country.alpha_2 for country in pycountry.countries}
     country_code = countries.get(country.title(), 'Unknown code')
     top_headlines = newsapi.get_top_headlines(category=category.lower(), language='en', country=country_code.lower())
@@ -86,7 +86,7 @@ def open_video():
     webbrowser.open(search_url)
 
 def get_weather(city_name):
-    api_key = 'deb91b8f90b414c9e81bf84889fbe9f7'
+    api_key = 'YOUR API_KEY HERE'
     url = f'http://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={api_key}&units=metric'
     response = requests.get(url)
     data = response.json()
@@ -159,7 +159,7 @@ def schedule_reminder(reminder_text, year, month, day, hour, minute):
 
 
 def get_exchange_rate(base_currency, target_currency):
-    api_key = 'f4787668fecc7c45daaf5fa8'
+    api_key = 'YOUR API_KEY HERE'
     url = f'https://v6.exchangerate-api.com/v6/{api_key}/pair/{base_currency.upper()}/{target_currency.upper()}'
 
     try:
