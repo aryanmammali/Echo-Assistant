@@ -60,7 +60,7 @@ def search_web(query):
     webbrowser.open(f"https://www.google.com/search?q={query}")
 
 def get_weather(city_name):
-    api_key = 'deb91b8f90b414c9e81bf84889fbe9f7'  # <-- Replace this!
+    api_key = 'API'  # <-- Replace this!
     if api_key == 'YOUR_API_KEY':
         speak("Weather API key missing. Please add it.")
         return
@@ -77,7 +77,7 @@ def get_weather(city_name):
 from newsapi import NewsApiClient
 
 def get_news():
-    api_key = '42652197cda347f6adfaff52aa646589'  # your working key
+    api_key = 'API'  # your working key
     newsapi = NewsApiClient(api_key=api_key)
 
     try:
